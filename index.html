@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo maker</title>
+    <link rel="stylesheet" href="./highlightjs/style.css"> <!-- atom-one-dark -->
+    <script src="./highlightjs/highlight.min.js" defer></script>
+    <script src="./html2canvas/html2canvas.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <div id="writer">
+            <div id="writer-tabs">
+                <div tab="html">HTML</div>
+                <div tab="css" class="active">CSS</div>
+                <div tab="json">Configuration</div>
+                <button id="upload_image_btn">Upload</button>
+                <button id="download_image_btn">Download</button>
+                <button id="render_image_btn">Render</button>
+            </div>
+            <pre tab="html" class="d-none">
+                <code id="writer-html-code" class="language-xml" contenteditable="true"></code>
+            </pre>
+            <pre tab="css">
+                <code id="writer-css-code" class="language-css" contenteditable="true">/* 
+    Example code 
+*/
+#image-container{
+    width: 250px;
+    height: 250px;
+    background-color: red;
+    border-radius: 50%;
+    padding: 30px;
+    transform: rotate(-45deg);
+}
+</code>
+            </pre>
+            <pre tab="json" class="d-none">
+                <code id="writer-json-code" class="language-json" contenteditable="true">
+{
+    "download-height": 1000,
+    "download-width": 1000,
+    "backgroundColor": null
+}
+                </code>
+            </pre>
+        </div>
+        <div id="preview">
+            <div id="logo-container"></div>
+        </div>
+    </div>
+    <style id="append-styles"></style>
+    <div id="loader" class="d-none">
+        <span>The image is being exported</span>
+        <span>please wait for the download to begin...</span>
+    </div>
+</body>
+</html>
